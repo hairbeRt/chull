@@ -8,6 +8,8 @@ def get_random_hull_length(n: int) -> float:
 
 
 def experiment(lower_n: int, upper_n: int, step_sz: int, am_exps: int):
+    #Generated for each n between lower_n and upper_n (with step size step_sz) am_exps many datasets of n normal-distributed points.
+    #Then, calculates and plots for each such n the average length of the boundary of the convex hull of the datasets.
     ns = range(lower_n,upper_n, step_sz)
     avg_lengths = []
     for n in ns:
