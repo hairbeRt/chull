@@ -22,5 +22,12 @@ def experiment(lower_n: int, upper_n: int, step_sz: int, am_exps: int):
     plt.plot(ns, avg_lengths)
     plt.show()
 
-if __name__ = "__main__":
+if __name__ == "__main__":
+    data = [Point(*np.random.multivariate_normal([0,0],[[1,0],[0,1]])) for i in range(0,100)]
+    ch = Point.convex_hull(data)
+    
+    plt.scatter([P._x for P in data],[P._y for P in data])
+    plt.plot([P._x for P in ch],[P._y for P in ch])
+    plt.show()
+
     experiment(5,1000, 5, 10)
